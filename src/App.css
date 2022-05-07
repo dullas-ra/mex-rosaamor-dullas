@@ -1,38 +1,279 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-timing-function: ease-in-out;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: #00243b;
+  background-image: rgb(253, 196, 255);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
+}
+header {
+  font-size: 2rem;
+  min-height: 15vh;
+}
+
+header,
+.add-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.add-form{
+  width: 800px;
+  margin: auto;
+}
+
+.error-message{
+  display: flex;
+  color: rgb(240, 32, 32);
+  width: 670px;
+  margin: auto;
+}
+
+form input,
+form .todo-button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form .todo-button {
+  color: #379a9f;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .todo-button:hover {
+  background: #379a9f;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-container h2{
+  margin: 2rem 0;
+}
+
+.todo-list {
+  list-style: none;
+  width: 100%;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+
+/*login form */
+.app {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f8f9fd;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+  background: #6cf0c2;
+}
+
+
+.register1-container {
+  color: #fff;
+}
+
+.forgot1-container {
+  color: #fff;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logheader {
+  height: 50px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+
+
+.user-container{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 50px;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 50px;
+}
+
+
+.trash-btn,
+.complete-btn,
+.edit-btn {
+  background: #eb9a6c;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 200ms;
+}
+.complete-btn {
+  background: rgb(190, 190, 190);
+}
+.trash-btn{
+  background: rgb(221, 32, 14);
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+
+button:active{
+  transform: scale(.9);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #379a9f;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #379a9f;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+
+.select:hover::after {
+  transform: scale(1.2);
+  transition: transform 200ms;
+}
+
+.select:active::after {
+  transform: scale(.9);
+}
+
+
+.editing{
+  animation: editing 500ms ease-in-out;
+  transform: scale(1.3);
+}
+
+.editing button{
+  transform: scaleY(1.1);
+}
+
+@keyframes editing{
+  from {transform: scale(1);}
+  to {transform: scale(1.3);}
 }
