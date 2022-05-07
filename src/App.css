@@ -88,7 +88,6 @@ form .todo-button:hover {
   flex: 1;
 }
 
-/*login form */
 .app {
   font-family: sans-serif;
   display: flex;
@@ -217,7 +216,6 @@ button:active{
   opacity: 0.5;
 }
 
-/*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -229,7 +227,6 @@ select {
   background-image: none;
 }
 
-/* Custom Select */
 .select {
   margin: 1rem;
   position: relative;
@@ -241,7 +238,7 @@ select {
   cursor: pointer;
   width: 12rem;
 }
-/* Arrow */
+
 .select::after {
   content: "\25BC";
   position: absolute;
@@ -252,12 +249,7 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
 
-.select:hover::after {
-  transform: scale(1.2);
-  transition: transform 200ms;
-}
 
 .select:active::after {
   transform: scale(.9);
